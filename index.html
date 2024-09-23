@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Сумма</title>
+	<script type="text/javascript">
+		function Krat() {
+			var NumArr = Number(document.forms["frm"].elements["NumArr"].value);
+			var Arr = new Array(NumArr);
+			for (var i = 0; i < Arr.length; i++) {
+				Arr[i] = Math.trunc(Math.random() * 100);
+			}
+
+			var Arr2 = check(Arr);
+
+			document.write("<h4>Сгенерирован: ", Arr, "</h4>");
+			document.write("<h4>Получился массив: ", Arr2, "</h4>");
+		}
+		function check(arr){
+			var arr2 = new Array();
+			for (var i = 0; i < arr.length; i++) {
+				if(arr[i] % 2 == 0) {
+					arr2.push(arr[i]);
+				}
+			}
+			return  arr2;
+		}
+	</script>
+</head>
+<body>
+<form id="frm">
+	<input type="text" id="NumArr" placeholder="Длина массива">
+	<input type="submit" value="Отправить" onclick="Krat()">
+</form>
+</body>
+</html>
